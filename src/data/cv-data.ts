@@ -8,6 +8,7 @@ export const personalInfo = {
   dob: '03/09/1988',
   linkedin: 'https://www.linkedin.com/in/ahmed-algammal/',
   github: 'https://github.com/algammal/',
+  facebook: 'https://www.facebook.com/', // ← update with your Facebook URL
 };
 
 export const aboutMe = `Frontend Lead Developer with 11+ years of experience building scalable, high performance web applications using React and Vue. I specialize in frontend architecture, performance optimization, and delivering intuitive, user focused interfaces.
