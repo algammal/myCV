@@ -6,6 +6,8 @@ export const personalInfo = {
   location: 'Cairo, Egypt',
   nationality: 'Egyptian',
   dob: '03/09/1988',
+  linkedin: 'https://www.linkedin.com/in/ahmed-algammal/',
+  github: 'https://github.com/algammal/',
 };
 
 export const aboutMe = `Frontend Lead Developer with 11+ years of experience building scalable, high performance web applications using React and Vue. I specialize in frontend architecture, performance optimization, and delivering intuitive, user focused interfaces.
@@ -54,7 +56,7 @@ export const experiences = [
     description: 'IT Technical Local-Support, and Service analyst and DSAP Approver at IBM.',
   },
   {
-    date: 'July 2019',
+    date: 'July 2016',
     title: 'Frontend Developer',
     company: '',
     description:
@@ -71,11 +73,13 @@ export const experiences = [
 
 export const projects = [
   { name: 'ERTU (Egyptian Radio & TV Union)', desc: '', tech: 'Vanilla Js', design: true },
-  { name: 'Wataniya internet portal', desc: '', tech: 'React', design: false },
+  { name: 'SAIB internet portal', desc: '', tech: 'BPM', design: false },
+  { name: 'MEA Enterprise Applications Community', desc: '', tech: 'IBM Community', design: true },
   { name: 'Vodafone Chatbot app', desc: '', tech: 'Vanilla Js', design: true },
   { name: 'NABIDAH Dubai', desc: '', tech: 'Angular', design: false },
-  { name: 'Urban humanity (Ministry of culture)', desc: '', tech: 'React', design: true },
-  { name: 'ECM Project — ICM (Giza)', desc: '', tech: 'React', design: false },
+  { name: 'Urban harmony (Ministry of culture)', desc: '', tech: 'React', design: true },
+  { name: 'ECM Project — (oil&gas', desc: '', tech: 'React', design: false },
+  { name: 'WATSON Chatbot for Aramco', desc: '', tech: 'React', design: false },
   { name: 'FAB (Bank (First Abu Dhabi Bank)', desc: '', tech: 'Angular', design: false },
   { name: 'TAMM Emirates', desc: '', tech: 'React', design: true },
   { name: 'DHA (Dubai Health Authority - Covid-19)', desc: '', tech: 'Angular', design: false },
@@ -92,7 +96,7 @@ export const designTools = [
   { name: 'Adobe Illustrator', level: 85 },
   { name: 'IBM Community', level: 75 },
   { name: 'Sketch', level: 80 },
-  { name: 'SkeFigmatch', level: 80 },
+  { name: 'Figma', level: 80 },
 ];
 
 export const devTools = [
@@ -103,6 +107,7 @@ export const devTools = [
   { name: 'Bootstrap', level: 100 },
   { name: 'Vue JS', level: 100 },
   { name: 'React', level: 100 },
+  { name: 'Next Js', level: 100 },
   { name: 'Redux', level: 100 },
   { name: 'GIT', level: 100 },
   { name: 'SASS', level: 100 },

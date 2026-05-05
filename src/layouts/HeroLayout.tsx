@@ -117,6 +117,8 @@ export default function HeroLayout() {
           { icon: '✉️', text: personalInfo.email },
           { icon: '📞', text: personalInfo.phone },
           { icon: '🌍', text: personalInfo.nationality },
+          { icon: '🔗', text: personalInfo.linkedin },
+          { icon: '🔗', text: personalInfo.github },
         ].map((item) => (
           <div
             key={item.text}
