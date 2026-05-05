@@ -48,7 +48,9 @@ export default function HeroLayout() {
           <div className="hero-avatar-wrapper">
             <div className="hero-avatar-ring" aria-hidden="true" />
             <div className="hero-avatar">
-              {personalInfo.name.split(' ').slice(0, 2).map((n) => n[0]).join('')}
+              {/* {personalInfo.name.split(' ').slice(0, 2).map((n) => n[0]).join('')} */}
+              <img className="hero-avatar-image" width={50}
+                 height={50} src="/logo.png" alt="AN" />
             </div>
           </div>
 
