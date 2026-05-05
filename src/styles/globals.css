@@ -195,6 +195,12 @@ a.info-pill:hover {
 .info-pill-social {
   gap: 7px;
 }
+.info-pill-social .social-url {
+  display: none;
+}
+.info-pill-social:hover .social-url {
+  display: inline;
+}
 .info-pill-social:hover {
   background: rgba(79, 156, 249, 0.1);
   border-color: rgba(79, 156, 249, 0.4);
@@ -658,6 +664,17 @@ a.info-pill:hover {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+  .info-pill-social .social-icon,
+  .info-pill-social .social-label {
+    display: none !important;
+  }
+  .info-pill-social .social-url {
+    display: inline !important;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    word-break: break-all;
+    color: inherit !important;
+  }
   body.print-theme-basic .hero-layout {
     background: #ffffff !important;
     color: #111111 !important;
@@ -681,7 +698,17 @@ a.info-pill:hover {
     print-color-adjust: exact !important;
   }
 }
-
+body.export-show-urls .info-pill-social .social-icon,
+body.export-show-urls .info-pill-social .social-label {
+  display: none !important;
+}
+body.export-show-urls .info-pill-social .social-url {
+  display: inline !important;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  word-break: break-all;
+  color: inherit !important;
+}
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 900px) {
   .main-grid {

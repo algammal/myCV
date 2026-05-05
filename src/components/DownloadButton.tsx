@@ -70,6 +70,10 @@ export default function DownloadButton() {
   const downloadImage = async () => {
     setOpen(false);
     setLoading('image');
+
+    const body = document.body;
+    body.classList.add('export-show-urls');
+
     try {
       const html2canvas = (await import('html2canvas')).default;
       const element = document.querySelector('.cv-page') as HTMLElement;
@@ -101,6 +105,7 @@ export default function DownloadButton() {
     } catch (err) {
       console.error('Image export failed:', err);
     } finally {
+      body.classList.remove('export-show-urls');
       setLoading(null);
     }
   };

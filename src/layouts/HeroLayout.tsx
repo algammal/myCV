@@ -138,8 +138,9 @@ export default function HeroLayout() {
           className="info-pill info-pill-social"
           aria-label="LinkedIn profile"
         >
-          <LinkedInIcon />
-          <span>LinkedIn</span>
+          <span className="social-icon"><LinkedInIcon /></span>
+          <span className="social-label">LinkedIn</span>
+          <span className="social-url">{personalInfo.linkedin}</span>
         </a>
 
         {/* GitHub — clickable link */}
@@ -151,8 +152,9 @@ export default function HeroLayout() {
           className="info-pill info-pill-social"
           aria-label="GitHub profile"
         >
-          <GitHubIcon />
-          <span>GitHub</span>
+          <span className="social-icon"><GitHubIcon /></span>
+          <span className="social-label">GitHub</span>
+          <span className="social-url">{personalInfo.github}</span>
         </a>
       </div>
     </header>
