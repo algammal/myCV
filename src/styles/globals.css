@@ -627,20 +627,29 @@ a.info-pill:hover {
   .cv-page { padding: 0; max-width: 100%; }
   .card {
     box-shadow: none !important;
-    border: 1px solid #ddd !important;
+    border: 1px solid rgba(255,255,255,0.07) !important;
+    background: var(--color-surface) !important;
     transform: none !important;
     break-inside: avoid;
-  }
-  body {
-    background: white !important;
-    color: #111 !important;
-    font-size: 12pt;
-  }
-  .text-muted { color: #555 !important; }
-  .hero-layout {
-    background: #1a1e28 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+  body {
+    background: var(--color-bg) !important;
+    color: var(--color-text) !important;
+    font-size: 12pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .text-muted { color: var(--color-text-muted) !important; }
+  .hero-layout {
+    background: linear-gradient(135deg, #13161d 0%, #1a1e28 60%, #1e1530 100%) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
 

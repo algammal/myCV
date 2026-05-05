@@ -65,11 +65,22 @@ export default function DownloadButton() {
       const html2canvas = (await import('html2canvas')).default;
       const element = document.querySelector('.cv-page') as HTMLElement;
       if (!element) return;
+
+      // Force compute styles to ensure CSS variables are resolved
+      const computedStyle = getComputedStyle(element);
+      const backgroundColor = computedStyle.getPropertyValue('--color-bg') || '#0d0f14';
+
       const canvas = await html2canvas(element, {
-        backgroundColor: '#0d0f14',
+        backgroundColor: backgroundColor,
         scale: 2,
         useCORS: true,
         logging: false,
+        allowTaint: true,
+        foreignObjectRendering: true,
+        width: element.scrollWidth,
+        height: element.scrollHeight,
+        windowWidth: element.scrollWidth,
+        windowHeight: element.scrollHeight,
       });
       const link = document.createElement('a');
       link.download = 'Ahmed-Nader-AlGammal-CV.png';
