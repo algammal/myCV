@@ -625,6 +625,19 @@ a.info-pill:hover {
   .no-print { display: none !important; }
   .parallax-bg { display: none !important; }
   .cv-page { padding: 0; max-width: 100%; }
+  body {
+    font-size: 12pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body.print-theme-website {
+    background: var(--color-bg) !important;
+    color: var(--color-text) !important;
+  }
+  body.print-theme-basic {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
   .card {
     box-shadow: none !important;
     border: 1px solid rgba(255,255,255,0.07) !important;
@@ -634,18 +647,34 @@ a.info-pill:hover {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  body {
-    background: var(--color-bg) !important;
-    color: var(--color-text) !important;
-    font-size: 12pt;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+  body.print-theme-basic .card {
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.1) !important;
   }
   .text-muted { color: var(--color-text-muted) !important; }
+  body.print-theme-basic .text-muted { color: #555 !important; }
   .hero-layout {
     background: linear-gradient(135deg, #13161d 0%, #1a1e28 60%, #1e1530 100%) !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+  body.print-theme-basic .hero-layout {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+  body.print-theme-basic .hero-layout h1 {
+    background: none !important;
+    -webkit-text-fill-color: #111111 !important;
+    color: #111111 !important;
+  }
+  body.print-theme-basic .hero-layout .hero-avatar {
+    background: #111111 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+  }
+  body.print-theme-basic .hero-layout .hero-shimmer-bar,
+  body.print-theme-basic .hero-layout .hero-blob {
+    display: none !important;
   }
   * {
     -webkit-print-color-adjust: exact !important;

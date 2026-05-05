@@ -49,13 +49,22 @@ export default function DownloadButton() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const downloadPDF = () => {
+  const downloadPDF = (theme: 'website' | 'basic') => {
     setOpen(false);
     setLoading('pdf');
-    setTimeout(() => {
-      window.print();
+
+    const body = document.body;
+    const themeClass = theme === 'website' ? 'print-theme-website' : 'print-theme-basic';
+    body.classList.add(themeClass);
+
+    const restorePrintTheme = () => {
+      body.classList.remove('print-theme-website', 'print-theme-basic');
       setLoading(null);
-    }, 100);
+      window.removeEventListener('afterprint', restorePrintTheme);
+    };
+
+    window.addEventListener('afterprint', restorePrintTheme);
+    window.print();
   };
 
   const downloadImage = async () => {
@@ -66,22 +75,25 @@ export default function DownloadButton() {
       const element = document.querySelector('.cv-page') as HTMLElement;
       if (!element) return;
 
-      // Force compute styles to ensure CSS variables are resolved
       const computedStyle = getComputedStyle(element);
-      const backgroundColor = computedStyle.getPropertyValue('--color-bg') || '#0d0f14';
+      const backgroundColor = computedStyle.getPropertyValue('--color-bg').trim() || '#0d0f14';
 
       const canvas = await html2canvas(element, {
-        backgroundColor: backgroundColor,
+        backgroundColor,
         scale: 2,
         useCORS: true,
         logging: false,
         allowTaint: true,
         foreignObjectRendering: true,
+        scrollX: -window.scrollX,
+        scrollY: -window.scrollY,
         width: element.scrollWidth,
         height: element.scrollHeight,
-        windowWidth: element.scrollWidth,
-        windowHeight: element.scrollHeight,
+        onclone: (clonedDoc) => {
+          clonedDoc.body.style.backgroundColor = backgroundColor;
+        },
       });
+
       const link = document.createElement('a');
       link.download = 'Ahmed-Nader-AlGammal-CV.png';
       link.href = canvas.toDataURL('image/png');
@@ -123,10 +135,19 @@ export default function DownloadButton() {
             id="download-pdf-option"
             className="download-dropdown-item"
             role="menuitem"
-            onClick={downloadPDF}
+            onClick={() => downloadPDF('website')}
           >
             <PdfIcon />
-            Download as PDF
+            Download as PDF (website theme)
+          </button>
+          <button
+            id="download-pdf-basic-option"
+            className="download-dropdown-item"
+            role="menuitem"
+            onClick={() => downloadPDF('basic')}
+          >
+            <PdfIcon />
+            Download as PDF (basic white theme)
           </button>
           <button
             id="download-image-option"
