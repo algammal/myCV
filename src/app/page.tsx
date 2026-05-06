@@ -10,7 +10,7 @@ export default function Home() {
           </header>
 
           <section className="landing-hero">
-            <div className="landing-eyebrow">wm to my CV</div>
+            <div className="landing-eyebrow">Ahmed Algammal</div>
             <h1 className="landing-title">A modern introduction to my work, skills, and story.</h1>
             <p className="landing-copy">
               Discover the same polished CV experience as the web version. Click below to enter the full resume page and explore the portfolio.
