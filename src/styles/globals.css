@@ -1117,6 +1117,27 @@ body.export-show-urls .info-pill-social .social-url {
   color: inherit !important;
 }
 
+/* ===================== COMPONENTS ===================== */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  color: #fff;
+  background: #ffffff0f;
+  border: 1px solid #ffffff24;
+  padding: 5px 20px;
+  border-radius: 20px;
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+  transform: translateX(-4px);
+}
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 900px) {
   .main-grid {
