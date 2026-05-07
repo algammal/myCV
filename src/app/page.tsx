@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import LandingVanta from '@/components/LandingVanta';
 
 export default function Home() {
   return (
-    <main className="landing-page">
-      <div className="landing-inner">
+    <main className="landing-page" style={{ position: 'relative', zIndex: 0, overflow: 'hidden' }}>
+      <LandingVanta />
+      <div className="landing-inner" style={{ position: 'relative', zIndex: 1 }}>
         <div className="landing-card">
           <header className="landing-nav">
             <div className="landing-brand"><img width="40" height="40" src="/logo.png" alt="Logo" /></div>
